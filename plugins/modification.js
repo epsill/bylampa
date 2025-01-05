@@ -19,7 +19,7 @@
 
     function start_set(){
            Lampa.Storage.set('set','true');
-           Lampa.Storage.set('keyboard_type', 'integrate');
+          // Lampa.Storage.set('keyboard_type', 'integrate');
            Lampa.Storage.set('start_page', 'main');
            Lampa.Storage.set('source', 'cub');
            Lampa.Storage.set('background', 'false');
