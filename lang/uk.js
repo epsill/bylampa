@@ -1111,5 +1111,19 @@ export default {
     discuss_rules_rule_7: 'Намагайтеся вкластися в 300 символів.',
     discuss_voited: 'Дякую за вашу оцінку! Ваш голос допомагає покращувати контент.',
 
-    confirm_open_player: 'Інший пристрій запитує доступ до програвача. Бажаєте відтворити відео?'
+    confirm_open_player: 'Інший пристрій запитує доступ до програвача. Бажаєте відтворити відео?',
+
+    pincode_use_remote: 'Використовуйте пульт для введення коду, натискаючи стрілки, щоб вибрати потрібну цифру.',
+    pincode_use_toggle: 'Натисніть та утримуйте кнопку OK, щоб змінити розкладку.',
+
+    settings_parental_control_where: 'Де запитати PIN-код',
+    title_fire: 'Вогонь!',
+    title_top_100: 'Топ 100',
+
+    player_normalization_type_title: 'Тип нормалізації',
+    player_normalization_type_all: 'Усі',
+    player_normalization_type_up: 'Тільки підвищення',
+    player_normalization_type_down: 'Тільки зниження',
+    storage_quota_exceeded: 'Перевищено ліміт сховища. Очистіть кеш і спробуйте ще раз.',
+
 }

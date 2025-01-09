@@ -1034,5 +1034,18 @@ export default {
     settings_interface_sound_level: 'רמת עוצמת הקול',
     settings_interface_advanced_animation: 'אנימציה מתקדמת',
 
-    confirm_open_player: 'מכשיר אחר מבקש גישה לנגן. רוצה להפעיל את הסרטון?'
+    confirm_open_player: 'מכשיר אחר מבקש גישה לנגן. רוצה להפעיל את הסרטון?',
+
+    pincode_use_remote: 'השתמש בשלט הרחוק כדי להזין את הקוד, לחץ על החצים כדי לבחור את המספר הרצוי.',
+    pincode_use_toggle: 'לחץ והחזק את הלחצן אישור כדי לשנות את הפריסה.',
+
+    settings_parental_control_where: 'היכן לבקש קוד PIN',
+    title_fire: 'אֵשׁ!',
+    title_top_100: '100 המובילים',
+
+    player_normalization_type_title: 'סוג נירמול',
+    player_normalization_type_all: 'הכל',
+    player_normalization_type_up: 'רק הגבהה',
+    player_normalization_type_down: 'רק הנמכה',
+    storage_quota_exceeded: 'מכסת האחסון חרגה. נקה את המטמון ונסה שוב.',
 }

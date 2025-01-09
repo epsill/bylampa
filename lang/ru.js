@@ -258,6 +258,7 @@ export default {
     settings_parental_control_demand_descr: 'Через какое время запрашивать PIN-код',
     settings_parental_control_enabled: 'Включено',
     settings_parental_control_disabled: 'Отключено',
+    settings_parental_control_where: 'Где запрашивать PIN-код',
 
     parental_control_input_new_code: 'Введите новый PIN-код',
     parental_control_confirm_new_code: 'Повторите PIN-код',
@@ -453,6 +454,8 @@ export default {
     title_left:'Осталось',
     title_parental_control: 'Родительский контроль',
     title_worth_rewatch: 'Стоит пересмотреть',
+    title_fire: 'Огонь!',
+    title_top_100: 'Топ 100',
 
     reactions_none: 'Нет реакций',
     reactions_fire: 'Супер',
@@ -909,6 +912,10 @@ export default {
     player_normalization_step_medium: 'Среднее',
     player_normalization_step_hight: 'Высокое',
     player_normalization: 'Нормализация',
+    player_normalization_type_title: 'Тип нормализации',
+    player_normalization_type_all: 'Все',
+    player_normalization_type_up: 'Только повышение',
+    player_normalization_type_down: 'Только понижение',
     player_youtube_no_played: 'К сожалению, это видео не доступно в вашем регионе, возможно, оно было заблокировано или удалено.',
     player_youtube_start_play: 'Для начала проигрывания видео, нажмите кнопку "Плей"',
 
@@ -1150,5 +1157,10 @@ export default {
     discuss_rules_rule_7: 'Постарайтесь уместится в 300 символов.',
     discuss_voited: 'Спасибо за вашу оценку! Ваш голос помогает улучшать контент.',
 
-    confirm_open_player: 'Другое устройство запрашивает доступ к плееру. Хотите воспроизвести видео?'
+    confirm_open_player: 'Другое устройство запрашивает доступ к плееру. Хотите воспроизвести видео?',
+
+    pincode_use_remote: 'Используйте пульт для ввода кода, нажимая стрелки для выбора нужной цифры.',
+    pincode_use_toggle: 'Нажмите и удерживайте кнопку OK, чтобы сменить раскладку.',
+
+    storage_quota_exceeded: 'Превышен лимит хранилища. Удалите кеш и повторите попытку.',
 }

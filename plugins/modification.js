@@ -82,3 +82,9 @@ for (var i = 0; i < localStorage.length; i++) {
 }
 
 $('link[rel="stylesheet"][href^="https://bylampa.github.io/themes/"]').remove();
+
+setTimeout(function() {
+	if ($('.christmas__button').length > 0) {
+           $('.christmas__button').remove();
+        }
+}, 1000);

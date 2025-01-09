@@ -1135,5 +1135,19 @@ export default {
     settings_interface_sound_level: 'Ниво на звука',
     settings_interface_advanced_animation: 'Разширена анимация',
 
-    confirm_open_player: 'Друго устройство иска достъп до плейъра. Искате ли да пуснете видеоклипа?'
+    confirm_open_player: 'Друго устройство иска достъп до плейъра. Искате ли да пуснете видеоклипа?',
+
+    pincode_use_remote: 'Използвайте дистанционното управление, за да въведете кода, като натиснете стрелките, за да изберете желания номер.',
+    pincode_use_toggle: 'Натиснете и задръжте бутона OK, за да промените оформлението.',
+
+    settings_parental_control_where: 'Къде да поискате ПИН код',
+    title_fire: 'Огън!',
+    title_top_100: 'Топ 100',
+
+    player_normalization_type_title: 'Тип нормализация',
+    player_normalization_type_all: 'Всички',
+    player_normalization_type_up: 'Само увеличаване',
+    player_normalization_type_down: 'Само намаляване',
+    storage_quota_exceeded: 'Надхвърлен е лимитът за съхранение. Изтрийте кеша и опитайте отново.',
+
 }

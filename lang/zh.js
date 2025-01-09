@@ -1086,5 +1086,19 @@ export default {
     settings_interface_sound_level: '音量级别',
     settings_interface_advanced_animation: '高级动画',
 
-    confirm_open_player: '另一台设备正在请求访问播放器。想播放视频吗？'
+    confirm_open_player: '另一台设备正在请求访问播放器。想播放视频吗？',
+
+    pincode_use_remote: '使用遥控器输入代码，按箭头选择所需的号码。',
+    pincode_use_toggle: '按住“确定”按钮可更改布局。',
+
+    settings_parental_control_where: '在哪里请求 PIN 码',
+    title_fire: '火！',
+    title_top_100: '前100名',
+
+    player_normalization_type_title: '标准化类型',
+    player_normalization_type_all: '全部',
+    player_normalization_type_up: '仅提升',
+    player_normalization_type_down: '仅降低',
+    storage_quota_exceeded: '存储配额已超出。清除缓存后重试。',
+
 }

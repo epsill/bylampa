@@ -1121,5 +1121,19 @@ export default {
     settings_interface_sound_level: 'Nível de volume',
     settings_interface_advanced_animation: 'Animação Avançada',
 
-    confirm_open_player: 'Outro dispositivo está solicitando acesso ao player. Quer reproduzir o vídeo?'
+    confirm_open_player: 'Outro dispositivo está solicitando acesso ao player. Quer reproduzir o vídeo?',
+
+    pincode_use_remote: 'Utilize o comando para introduzir o código, premindo as setas para selecionar o número pretendido.',
+    pincode_use_toggle: 'Prima e mantenha premido o botão OK para alterar o layout.',
+
+    settings_parental_control_where: 'Onde solicitar um código PIN',
+    title_fire: 'Fogo!',
+    title_top_100: '100 melhores',
+
+    player_normalization_type_title: 'Tipo de Normalização',
+    player_normalization_type_all: 'Todos',
+    player_normalization_type_up: 'Apenas Aumento',
+    player_normalization_type_down: 'Apenas Diminuição',
+    storage_quota_exceeded: 'Limite de armazenamento excedido. Limpe o cache e tente novamente.',
+
 }

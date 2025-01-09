@@ -1151,5 +1151,18 @@ export default {
     discuss_rules_rule_7: 'Старайцеся ўпісацца ў 300 сімвалаў.',
     discuss_voited: 'Дзякуй за вашу адзнаку! Ваш голас дапамагае паляпшаць кантэнт.',
 
-    confirm_open_player: 'Іншая прылада запытвае доступ да плэера. Жадаеце прайграць відэа?'
+    confirm_open_player: 'Іншая прылада запытвае доступ да плэера. Жадаеце прайграць відэа?',
+
+    pincode_use_remote: 'Выкарыстоўвайце пульт для ўводу кода, націскаючы стрэлкі для выбару патрэбнай лічбы.',
+    pincode_use_toggle: 'Націсніце і ўтрымлівайце кнопку OK, каб змяніць раскладку.',
+
+    settings_parental_control_where: 'Дзе запытваць PIN-код',
+    title_fire: 'Агонь!',
+    title_top_100: 'Топ 100',
+
+    storage_quota_exceeded: 'Перавышаны ліміт сховішча. Выдаліце кэш і паспрабуйце зноў.',
+    player_normalization_type_title: 'Тып нармалізацыі',
+    player_normalization_type_all: 'Усе',
+    player_normalization_type_up: 'Толькі павышэнне',
+    player_normalization_type_down: 'Толькі паніжэнне',
 }
