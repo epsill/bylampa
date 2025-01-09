@@ -87,4 +87,4 @@ setTimeout(function() {
 	if ($('.christmas__button').length > 0) {
            $('.christmas__button').remove();
         }
-}, 1000);
+}, 1500);
