@@ -1,4 +1,24 @@
-   
+function check (){
+
+var url = 'http://tmdb.cub.red/movie/now?page=1';
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.timeout = 2000;
+	xhr.send();
+	xhr.onload = function() {
+		//Lampa.Noty.show('Ок');
+	}
+	xhr.ontimeout = function() {
+		Lampa.Noty.show('Тайм-аут');
+	};
+	xhr.onerror = function() {
+		Lampa.Noty.show('Ошибка');
+		
+	};
+}
+check();
+
+
    window.lampa_settings.torrents_use = true;
    window.lampa_settings.demo = false;
    window.lampa_settings.read_only = false;
@@ -61,8 +81,8 @@ $(document).ready(function() {
 var plugins = Lampa.Storage.get('plugins','[]')
 
     plugins.forEach(function(plug) {
-        plug.url = (plug.url + '').replace('http://cub.red/plugin/tmdb-proxy', 'https://bylampa.github.io/tmdb-proxy.js');
-	plug.url = (plug.url + '').replace('https://bylampa.github.io/m.js', 'http://showy.online/m.js');
+      //  plug.url = (plug.url + '').replace('http://cub.red/plugin/tmdb-proxy', 'https://bylampa.github.io/tmdb-proxy.js');
+	//plug.url = (plug.url + '').replace('https://bylampa.github.io/m.js', 'http://showy.online/m.js');
     })
 
     Lampa.Storage.set('plugins',plugins)
