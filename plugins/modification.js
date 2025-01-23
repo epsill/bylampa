@@ -47,7 +47,7 @@
       }
      });
 
-//$(document).ready(function() {
+$(document).ready(function() {
     var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
             if ($(this).text().trim() === 'Lampa') {
