@@ -4,8 +4,8 @@
    window.lampa_settings.read_only = false;
 
    Lampa.Utils.putScriptAsync([
-	    //'https://bylampa.github.io/notice.js?v=' + Math.random(),
-	    //'https://bylampa.github.io/addon.js?v=' + Math.random(),*/
+	    //'https://bylampa.github.io/notice.js?v=' + Math.random()
+	    //'https://bylampa.github.io/addon.js?v=' + Math.random(),
    ], function () {});
 
    var timer = setInterval(function(){
