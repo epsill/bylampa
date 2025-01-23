@@ -5,12 +5,12 @@
 
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
-	    'https://bylampa.github.io/addon.js?v=' + Math.random()
+	    //'https://bylampa.github.io/addon.js?v=' + Math.random()
    ], function () {});
 
-   var timer = setInterval(function(){
+   /*var timer = setInterval(function(){
         if(typeof Lampa !== 'undefined'){
-            clearInterval(timer);
+            clearInterval(timer);*/
 
             if(!Lampa.Storage.get('set','false')) start_set();
 		 
