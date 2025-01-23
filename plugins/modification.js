@@ -47,14 +47,14 @@
       }
      });
 
-$(document).ready(function() {
+//$(document).ready(function() {
     var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
             if ($(this).text().trim() === 'Lampa') {
                 $(this).html('BYLAMPA');
             }
         });
-    }, 50); 
+    }, 50);
  
     $('.navigation-tabs__button').on('focus', function() {
         if ($(this).text().trim() === 'Lampa') {
