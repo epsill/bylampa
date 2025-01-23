@@ -24,7 +24,7 @@
            Lampa.Storage.set('plugins', pluginsArray);
 	}
            Lampa.Storage.set('set','true');
-           Lampa.Storage.set('keyboard_type', 'built-in');
+           //Lampa.Storage.set('keyboard_type', 'built-in');
            Lampa.Storage.set('start_page', 'main');
            Lampa.Storage.set('source', 'tmdb');
            Lampa.Storage.set('background', 'false');
