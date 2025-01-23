@@ -12,7 +12,7 @@
         if(typeof Lampa !== 'undefined'){
             clearInterval(timer);
 
-            if(!Lampa.Storage.get('set','false')) start_set();
+            //if(!Lampa.Storage.get('set','false')) start_set();
 		 
         }
     },200);
