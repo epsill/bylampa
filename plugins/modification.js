@@ -1,5 +1,14 @@
 //   Lampa.Storage.set('cub_domain', 'standby.cub.red');
 
+       Lampa.Lang.add({
+          extensions_worked: {
+            ru: "Доступен для загрузки"
+          },
+          title_error: {
+            ru: "Недоступен или ошибка в адресе"
+          }
+        })
+
    window.lampa_settings.torrents_use = true;
    window.lampa_settings.demo = false;
    window.lampa_settings.read_only = false;
