@@ -1,6 +1,6 @@
 //   Lampa.Storage.set('cub_domain', 'standby.cub.red');
 
-       Lampa.Storage.set('showy_iptv_view_in_main', 'false');
+    //   Lampa.Storage.set('showy_iptv_view_in_main', 'false');
 
        Lampa.Lang.add({
           extensions_worked: {
