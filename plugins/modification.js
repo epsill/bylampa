@@ -5,7 +5,10 @@
           },
           title_error: {
             ru: "Недоступен или ошибка в адресе"
-          }
+          },
+	  torrent_parser_no_hash: {
+            ru: "Не удалось получить HASH. Перезагрузите свой TorrServer или смените адрес TorrServer!"
+	  }
         })
 
    window.lampa_settings.torrents_use = true;
