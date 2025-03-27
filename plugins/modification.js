@@ -39,7 +39,7 @@
            Lampa.Storage.set('set','true');
           // Lampa.Storage.set('keyboard_type', 'integrate');
            Lampa.Storage.set('start_page', 'main');
-           Lampa.Storage.set('source', 'tmdb');
+           Lampa.Storage.set('aviamovie', 'source', 'tmdb');
            Lampa.Storage.set('background', 'false');
 	   Lampa.Storage.set('animation', 'true');
 	   Lampa.Storage.set('mask', 'false');
