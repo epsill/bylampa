@@ -39,11 +39,11 @@
            Lampa.Storage.set('set','true');
           // Lampa.Storage.set('keyboard_type', 'integrate');
            Lampa.Storage.set('start_page', 'main');
-           Lampa.Storage.set('aviamovie', 'source', 'tmdb');
+           Lampa.Storage.set('tmdb', 'source', 'aviamovie');
            Lampa.Storage.set('background', 'false');
 	   Lampa.Storage.set('animation', 'true');
 	   Lampa.Storage.set('mask', 'false');
-	   Lampa.Storage.set('player_normalization', 'true');
+	   Lampa.Storage.set('player_normalization', 'false');
 	   Lampa.Storage.set('player_timecode', 'ask');
 	   Lampa.Storage.set('screensaver', 'false');
            Lampa.Storage.set('pages_save_total', '3');
