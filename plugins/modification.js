@@ -52,6 +52,7 @@
 	   Lampa.Storage.set('jackett_url', 'jacred.xyz');       
            Lampa.Storage.set('jackett_key', '');     // ключ доступа
            Lampa.Storage.set('parser_torrent_type', 'jackett');
+	   Lampa.Storage.set('parser_use', 'true');
 	//   Lampa.Storage.set('cub_domain', 'standby.cub.red');
 	   location.reload()
      } 
