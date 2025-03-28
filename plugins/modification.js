@@ -48,7 +48,7 @@
 	   Lampa.Storage.set('screensaver', 'false');
            Lampa.Storage.set('pages_save_total', '3');
 	   Lampa.Storage.set('device_name', 'Lampa Uncensored');
-	   Lampa.Storage.set('torrserver_url', 'http://185.105.117.217:2025');  // http://ip:9118/ts
+	   Lampa.Storage.set('torrserver_url', '');  // http://ip:9118/ts
 	   Lampa.Storage.set('jackett_url', 'jacred.xyz');       
            Lampa.Storage.set('jackett_key', '');     // ключ доступа
            Lampa.Storage.set('parser_torrent_type', 'jackett');
