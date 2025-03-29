@@ -11,9 +11,32 @@
 	  }
         })
 
-   window.lampa_settings.torrents_use = true;
-   window.lampa_settings.demo = false;
-   window.lampa_settings.read_only = false;
+    window.lampa_settings = {
+    torrents_use: true,    // кнопка торренты включена
+    demo: false,           // demo off
+    read_only: false,      // demo off
+    socket_use: false,     // cub 
+    account_use: true,     // сохраним ради расширенных закладок 
+    account_sync: false,   // cub синхронизация
+    plugins_store: false,  // cub магазин
+    feed: false,           // cub лента
+    white_use: false,      // cub 
+    push_state: false,     // адрес в url /?card=1241982&media=movie 
+    lang_use: true,        // выбор языка в настройках
+    plugins_use: true      // настройки, расширения
+  }
+
+  window.lampa_settings.disable_features = {
+    dmca: true,          // шлет нахер правообладателей - on
+    reactions: false,    // cub реакции - on
+    discuss: false,      // cub комментарии - on
+    ai: true,            // cub AI-поиск - off
+    install_proxy: true, // cub tmdb proxy - off
+    subscribe: true,     // cub подписки - off
+    blacklist: true,     // off
+    persons: true        // off
+  }
+
 
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
