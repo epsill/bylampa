@@ -36,7 +36,9 @@
     blacklist: true,     // off
     persons: true        // off
   }
-
+    var styleElement = document.createElement('style');
+    styleElement.innerHTML = '.head .notice--icon { display: none; }';
+    document.body.appendChild(styleElement);
 
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
