@@ -16,7 +16,7 @@
     demo: false,           // demo off
     read_only: false,      // demo off
     socket_use: false,     // cub 
-    account_use: true,     // сохраним ради расширенных закладок 
+    account_use: false,     // сохраним ради расширенных закладок 
     account_sync: false,   // cub синхронизация
     plugins_store: false,  // cub магазин
     feed: false,           // cub лента
@@ -28,8 +28,8 @@
 
   window.lampa_settings.disable_features = {
     dmca: true,          // шлет нахер правообладателей - on
-    reactions: false,    // cub реакции - on
-    discuss: false,      // cub комментарии - on
+    reactions: true,    // cub реакции - on
+    discuss: true,      // cub комментарии - on
     ai: true,            // cub AI-поиск - off
     install_proxy: true, // cub tmdb proxy - off
     subscribe: true,     // cub подписки - off
