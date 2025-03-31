@@ -32,7 +32,7 @@
     function start_set(){
 	if (Lampa.Storage.get('language') == 'ru') {
 	   var pluginsArray = Lampa.Storage.get('plugins','[]')
-	   pluginsArray.push({"author": "@bylampa","url": "http://plugin.rootu.top/tmdb.js","name":"TMDB Proxy","status": 1});
+	   pluginsArray.push({"author": "@bylampa","url": "https://bylampa.github.io/tmdb-proxy.js","name":"TMDB Proxy","status": 1});
            Lampa.Storage.set('plugins', pluginsArray);
 	}
            Lampa.Storage.set('set','true');
