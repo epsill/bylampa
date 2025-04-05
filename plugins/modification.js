@@ -1,4 +1,4 @@
-
+Lampa.Storage.set('protocol', 'http');
        Lampa.Lang.add({
           extensions_worked: {
             ru: "Доступен для загрузки"
