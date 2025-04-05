@@ -1,8 +1,7 @@
-var protocolButt = '<div id="secured" class="head__action proto"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="25.6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #ffffff)" d="M400,200H388V144a128,128,0,0,0-256,0v56H120a24.028,24.028,0,0,0-24,24V472a24.028,24.028,0,0,0,24,24H400a24.028,24.028,0,0,0,24-24V224A24.028,24.028,0,0,0,400,200ZM164,144a96,96,0,0,1,192,0v56H164ZM392,464H128V232H392Z" class="ci-primary"></path> <rect width="40" height="40" x="240" y="328" fill="var(--ci-primary-color, #ffffff)" class="ci-primary"></rect> </g></svg>';
-if (window.location.protocol == 'https:') $('#app > div.head > div > div.head__actions').prepend(protocolButt);
 
 Lampa.Storage.set('protocol', 'http');
-       Lampa.Lang.add({
+     
+Lampa.Lang.add({
           extensions_worked: {
             ru: "Доступен для загрузки"
           },
@@ -12,7 +11,7 @@ Lampa.Storage.set('protocol', 'http');
 	  torrent_parser_no_hash: {
             ru: "Не удалось получить HASH. Перезагрузите свой TorrServer или смените адрес TorrServer!"
 	  }
-        })
+   })
 
    window.lampa_settings.torrents_use = true;
    window.lampa_settings.demo = false;
@@ -65,6 +64,10 @@ Lampa.Storage.set('protocol', 'http');
      });
 
 $(document).ready(function() {
+
+   var protocolButt = '<div id="secured" class="head__action proto"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="25.6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #ffffff)" d="M400,200H388V144a128,128,0,0,0-256,0v56H120a24.028,24.028,0,0,0-24,24V472a24.028,24.028,0,0,0,24,24H400a24.028,24.028,0,0,0,24-24V224A24.028,24.028,0,0,0,400,200ZM164,144a96,96,0,0,1,192,0v56H164ZM392,464H128V232H392Z" class="ci-primary"></path> <rect width="40" height="40" x="240" y="328" fill="var(--ci-primary-color, #ffffff)" class="ci-primary"></rect> </g></svg>';
+   if (window.location.protocol == 'https:') $('#app > div.head > div > div.head__actions').prepend(protocolButt);
+	
     var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
             if ($(this).text().trim() === 'Lampa') {
