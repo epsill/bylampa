@@ -69,7 +69,7 @@ $(document).ready(function() {
    if (window.location.protocol == 'https:') 
 	setTimeout(function(){
 	   $('#app > div.head > div > div.head__actions').prepend(protocolButt);
-	}, 100)
+	}, 2000)
 	
     var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
