@@ -1,5 +1,26 @@
+  Lampa.SettingsApi.addParam({
+    component: 'interface',
+    param: {
+    name: 'voteSelector',
+    type: 'select',
+    values: {
+      0: "КиноПоиск",
+      1: "IDMB",
+      2: "TMDB"
+    },
+    default: 2
+    },
+    field: {
+      name: 'Источник рейтинга',
+      description: ''
+    },
+    onRender: function (item) {
+      setTimeout(function() {
+        document.querySelector('div[data-name="card_interfice_type"]').before(document.querySelector('div[data-name="voteSelector"]'));
+      }, 10);
+    }
+  });
 
-Lampa.Storage.set('protocol', 'http');
      
 Lampa.Lang.add({
           extensions_worked: {
