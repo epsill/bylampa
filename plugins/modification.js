@@ -50,7 +50,7 @@ Lampa.Lang.add({
 	   Lampa.Storage.set('screensaver', 'false');
            Lampa.Storage.set('pages_save_total', '3');
 	   Lampa.Storage.set('device_name', 'Lampa Uncensored');
-	   Lampa.Storage.set('navigation_type','mouse`);
+	   Lampa.Storage.set('navigation_type', 'mouse`);
 	//   Lampa.Storage.set('cub_domain', 'standby.cub.red');
 	   location.reload()
      } 
