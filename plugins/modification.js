@@ -1,4 +1,6 @@
-  Lampa.SettingsApi.addParam({
+Lampa.Storage.set('protocol', 'http');
+
+Lampa.SettingsApi.addParam({
     component: 'interface',
     param: {
     name: 'voteSelector',
