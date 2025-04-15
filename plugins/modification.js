@@ -18,7 +18,7 @@ Lampa.SettingsApi.addParam({
     },
     onRender: function (item) {
       setTimeout(function() {
-        document.querySelector('div[data-name="card_interfice_type"]').before(document.querySelector('div[data-name="voteSelector"]'));
+       // document.querySelector('div[data-name="card_interfice_type"]').before(document.querySelector('div[data-name="voteSelector"]'));
 	$('.settings-param > div:contains("Источник рейтинга")').parent().insertAfter($('div[data-name="card_interfice_type"]')); 
       }, 10);
     }
