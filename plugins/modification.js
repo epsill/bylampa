@@ -41,25 +41,11 @@ Lampa.Lang.add({
    window.lampa_settings.demo = false;
    window.lampa_settings.read_only = false;
 
-   async function loadScripts() {
-    const scripts = [
-        'https://bywolf88.github.io/lampa-plugins/cinemabywolf.js',
-        'https://bylampa.github.io/notice.js',
-        'https://bylampa.github.io/addon.js'
-    ];
+   Lampa.Utils.putScriptAsync([
+	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
+	    'https://bylampa.github.io/addon.js?v=' + Math.random()
+   ], function () {});
 
-    for (const url of scripts) {
-        try {
-            await Lampa.Utils.putScriptAsync(url + '?v=1.0.0'); // или другой контроль версий
-            console.log(`Скрипт ${url} загружен`);
-        } catch (error) {
-            console.error(`Ошибка загрузки ${url}:`, error);
-            // Можно показать уведомление пользователю
-        }
-    }
-}
-
-loadScripts();
 
    var timer = setInterval(function(){
         if(typeof Lampa !== 'undefined'){
