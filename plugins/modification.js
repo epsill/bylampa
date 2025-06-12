@@ -93,6 +93,9 @@ $(document).ready(function() {
    if (window.location.protocol == 'https:') 
 	setTimeout(function(){
 	   $('#app > div.head > div > div.head__actions').prepend(protocolButt);
+	   Lampa.Bell.push({
+                 text: Lampa.Lang.translate('Измените протокол сервера на http')
+           });
 	}, 2000)
 	
     var interval = setInterval(function() {
