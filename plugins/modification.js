@@ -43,8 +43,13 @@ Lampa.Lang.add({
 
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
-	    'https://bylampa.github.io/addon.js?v=' + Math.random()
+	    'https://bylampa.github.io/addon.js?v=' + Math.random(),
+	    'https://bylampa.github.io/account.js?v=' + Math.random()
    ], function () {});
+
+   var plugArray = Lampa.Storage.get('plugins') || [];
+   var delplugin = plugArray.filter(function(obj) {return obj.url !== 'https://bylampa.github.io/account.js'});
+   Lampa.Storage.set('plugins', delplugin); 
 
    var timer = setInterval(function(){
         if(typeof Lampa !== 'undefined'){
