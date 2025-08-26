@@ -122,7 +122,7 @@ $(document).ready(function() {
 
     plugins.forEach(function(plug) {
         plug.url = (plug.url + '').replace('http://cub.red/plugin/tmdb-proxy', 'https://bylampa.github.io/tmdb-proxy.js');
-        plug.url = (plug.url + '').replace('https://bylampa.github.io/asia_card_off.js', 'https://bylampa.github.io/filter_content.js');
+      //  plug.url = (plug.url + '').replace('https://bylampa.github.io/asia_card_off.js', 'https://bylampa.github.io/filter_content.js');
     })
 
     Lampa.Storage.set('plugins',plugins) 
