@@ -1,6 +1,6 @@
 Lampa.Storage.set('protocol', 'http');
 
-Lampa.SettingsApi.addParam({
+/*Lampa.SettingsApi.addParam({
     component: 'interface',
     param: {
     name: 'voteSelector',
@@ -22,7 +22,7 @@ Lampa.SettingsApi.addParam({
 	$('.settings-param > div:contains("Источник рейтинга")').parent().insertAfter($('div[data-name="card_interfice_type"]')); 
       }, 10);
     }
-  });
+  });*/
 
      
 Lampa.Lang.add({
