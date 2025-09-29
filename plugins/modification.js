@@ -1,31 +1,34 @@
 if (Lampa.Storage.get('start_page') === 'favorite@history') {  
     console.log('1. Условие start_page выполнено:', Lampa.Storage.get('start_page'));  
       
-    var active_timer_history = setInterval(function() {  
-        console.log('2. Таймер сработал');  
+    Lampa.Storage.listener.follow('change', function (event) {  
+        console.log('2. Storage change event:', event.name);  
           
-        var my_active = Lampa.Activity.active();  
-        console.log('3. Текущая активность:', my_active);  
-          
-        if (my_active && my_active.component === 'history') {  
-            console.log('4. Найдена активность history, очищаем таймер');  
-            clearInterval(active_timer_history);  
+        if (event.name === 'activity') {  
+            console.log('3. Activity изменилась');  
               
-            setTimeout(function(){  
-                console.log('5. Выполняем замену активности через 5 секунд');  
+            var my_active = Lampa.Activity.active();  
+            console.log('4. Текущая активность:', my_active);  
+              
+            if (my_active && my_active.component === 'history') {  
+                console.log('5. Найдена активность history, выполняем замену');  
                   
-                Lampa.Activity.replace({  
-                    component: 'bookmarks',  
-                    title: Lampa.Lang.translate('title_bookmarks'),  
-                    page: 1  
-                });  
-                  
-                console.log('6. Замена активности выполнена');  
-            }, 5000);  
-        } else {  
-            console.log('4. Активность не history или не найдена, компонент:', my_active ? my_active.component : 'нет активности');  
+                setTimeout(function(){  
+                    console.log('6. Выполняем замену активности через 5 секунд');  
+                      
+                    Lampa.Activity.replace({  
+                        component: 'favorite',  
+                        title: Lampa.Lang.translate('title_bookmarks'),  
+                        page: 1  
+                    });  
+                      
+                    console.log('7. Замена активности выполнена');  
+                }, 5000);  
+            } else {  
+                console.log('5. Активность не history, компонент:', my_active ? my_active.component : 'нет активности');  
+            }  
         }  
-    }, 200);  
+    });  
 }
 
 Lampa.Storage.set('protocol', 'http');
