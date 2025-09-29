@@ -1,4 +1,4 @@
-if (Lampa.Storage.field('start_page') === 'favorite@history') {    
+if (Lampa.Storage.get('start_page') === 'favorite@history') {    
     var active_timer_history = setInterval(function() {    
         var my_active = Lampa.Activity.active();    
             
