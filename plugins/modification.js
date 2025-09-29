@@ -1,19 +1,32 @@
-//if (Lampa.Storage.get('start_page') === 'favorite@history') {      
-    var active_timer_history = setInterval(function() {      
-        var my_active = Lampa.Activity.active();      
+if (Lampa.Storage.get('start_page') === 'favorite@history') {  
+    console.log('1. Условие start_page выполнено:', Lampa.Storage.get('start_page'));  
+      
+    var active_timer_history = setInterval(function() {  
+        console.log('2. Таймер сработал');  
+          
+        var my_active = Lampa.Activity.active();  
+        console.log('3. Текущая активность:', my_active);  
+          
+        if (my_active && my_active.component === 'history') {  
+            console.log('4. Найдена активность history, очищаем таймер');  
+            clearInterval(active_timer_history);  
               
-        if (my_active && my_active.component === 'history') {      
-            clearInterval(active_timer_history);      
             setTimeout(function(){  
-                Lampa.Activity.replace({      
-                    component: 'bookmarks',  // <- Изменено на bookmarks  
-                    title: Lampa.Lang.translate('title_bookmarks'),    
-                    page: 1    
-                });      
+                console.log('5. Выполняем замену активности через 5 секунд');  
+                  
+                Lampa.Activity.replace({  
+                    component: 'bookmarks',  
+                    title: Lampa.Lang.translate('title_bookmarks'),  
+                    page: 1  
+                });  
+                  
+                console.log('6. Замена активности выполнена');  
             }, 5000);  
-        }      
-    }, 200);      
-//}
+        } else {  
+            console.log('4. Активность не history или не найдена, компонент:', my_active ? my_active.component : 'нет активности');  
+        }  
+    }, 200);  
+}
 
 Lampa.Storage.set('protocol', 'http');
 localStorage.setItem('cub_domain', 'cubfix.fun');
