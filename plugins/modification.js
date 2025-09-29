@@ -1,34 +1,3 @@
-if (Lampa.Storage.get('start_page') === 'favorite@history') {    
-    console.log('1. Условие start_page выполнено:', Lampa.Storage.get('start_page'));    
-        
-    var active_timer_history = setInterval(function() {    
-        console.log('2. Таймер сработал');    
-        setTimeout(function(){ 
-        var my_active = Lampa.Activity.active();    
-        console.log('3. Текущая активность:', my_active);    
-            
-        if (my_active && my_active.component === 'history') {    
-            console.log('4. Найдена активность history, очищаем таймер');    
-            clearInterval(active_timer_history);    
-                
-            setTimeout(function(){    
-                console.log('5. Выполняем переход к активности через 5 секунд');    
-                    
-                Lampa.Activity.push({    
-                    component: 'favorite',    
-                    title: Lampa.Lang.translate('title_bookmarks'),    
-                    page: 1    
-                });    
-                    
-                console.log('6. Переход к активности выполнен');    
-            }, 5000);    
-        } else {    
-            console.log('4. Активность не history или не найдена, компонент:', my_active ? my_active.component : 'нет активности');    
-        }    
-		}, 5000);
-    }, 200);    
-}
-
 Lampa.Storage.set('protocol', 'http');
 localStorage.setItem('cub_domain', 'cubfix.fun');
 
