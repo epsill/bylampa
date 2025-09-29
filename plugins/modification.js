@@ -95,46 +95,14 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
 
 $(document).ready(function() {
 
-   /*var protocolButt = '<div id="secured" class="head__action proto"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="25.6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #ffffff)" d="M400,200H388V144a128,128,0,0,0-256,0v56H120a24.028,24.028,0,0,0-24,24V472a24.028,24.028,0,0,0,24,24H400a24.028,24.028,0,0,0,24-24V224A24.028,24.028,0,0,0,400,200ZM164,144a96,96,0,0,1,192,0v56H164ZM392,464H128V232H392Z" class="ci-primary"></path> <rect width="40" height="40" x="240" y="328" fill="var(--ci-primary-color, #ffffff)" class="ci-primary"></rect> </g></svg>';
+   var protocolButt = '<div id="secured" class="head__action proto"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="25.6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #ffffff)" d="M400,200H388V144a128,128,0,0,0-256,0v56H120a24.028,24.028,0,0,0-24,24V472a24.028,24.028,0,0,0,24,24H400a24.028,24.028,0,0,0,24-24V224A24.028,24.028,0,0,0,400,200ZM164,144a96,96,0,0,1,192,0v56H164ZM392,464H128V232H392Z" class="ci-primary"></path> <rect width="40" height="40" x="240" y="328" fill="var(--ci-primary-color, #ffffff)" class="ci-primary"></rect> </g></svg>';
    if (window.location.protocol == 'https:') 
-	setTimeout(function(){
-	   $('#app > div.head > div > div.head__actions').prepend(protocolButt);
-	   Lampa.Bell.push({
+	 setTimeout(function(){
+	    $('#app > div.head > div > div.head__actions').prepend(protocolButt);
+	       Lampa.Bell.push({
                  text: Lampa.Lang.translate('Измените протокол сервера на http')
            });
-	}, 2000)*/
-
-	var protocolButt = '<div id="secured" class="head__action proto"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" stroke-width="25.6"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #ffffff)" d="M400,200H388V144a128,128,0,0,0-256,0v56H120a24.028,24.028,0,0,0-24,24V472a24.028,24.028,0,0,0,24,24H400a24.028,24.028,0,0,0,24-24V224A24.028,24.028,0,0,0,400,200ZM164,144a96,96,0,0,1,192,0v56H164ZM392,464H128V232H392Z" class="ci-primary"></path> <rect width="40" height="40" x="240" y="328" fill="var(--ci-primary-color, #ffffff)" class="ci-primary"></rect> </g></svg>';  
-  
-if (window.location.protocol == 'https:') {  
-    setTimeout(function(){  
-        $('#app > div.head > div > div.head__actions').prepend(protocolButt);  
-          
-        // Заменяем Lampa.Bell.push на модальное окно  
-        Lampa.Modal.open({  
-            title: 'Ошибка',  
-            align: 'center',  
-            html: $('<div class="about">Вы используете неправильный протокол адреса. Нажмите НЕТ для устранения проблемы самому или ДА для редиректа на правильный адрес.</div>'),  
-            buttons: [{  
-                name: 'Нет',  
-                onSelect: function () {  
-                    Lampa.Modal.close();  
-                    Lampa.Controller.toggle('content');  
-                }  
-            }, {  
-                name: 'Да',  
-                onSelect: function () {  
-                    Lampa.Modal.close();  
-                    window.location.href = 'http://bylampa.online';  
-                }  
-            }],  
-            onBack: function () {  
-                Lampa.Modal.close();  
-                Lampa.Controller.toggle('content');  
-            }  
-        });  
-    }, 2000);  
-}
+	  }, 2000)
 	
     var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
