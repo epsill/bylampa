@@ -1,5 +1,21 @@
+if (Lampa.Storage.field('start_page') === 'history') {    
+    var active_timer_history = setInterval(function() {    
+        var my_active = Lampa.Activity.active();    
+            
+        if (my_active && my_active.component === 'history') {    
+            clearInterval(active_timer_history);    
+            Lampa.Activity.replace({    
+                component: 'history',  
+                title: Lampa.Lang.translate('title_history'),  
+                page: 1  
+            });    
+        }    
+    }, 200);    
+}
+
 Lampa.Storage.set('protocol', 'http');
 localStorage.setItem('cub_domain', 'cubfix.fun');
+
 /*Lampa.SettingsApi.addParam({
     component: 'interface',
     param: {
@@ -25,16 +41,16 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
   });*/
 
      
-Lampa.Lang.add({
+  Lampa.Lang.add({
           extensions_worked: {
             ru: "Доступен для загрузки"
           },
           title_error: {
             ru: "Недоступен или ошибка в адресе"
           },
-	  torrent_parser_no_hash: {
+	      torrent_parser_no_hash: {
             ru: "Не удалось получить HASH. Перезагрузите свой TorrServer или смените адрес TorrServer!"
-	  }
+	      }
    })
 
    window.lampa_settings.torrents_use = true;
@@ -64,24 +80,24 @@ Lampa.Lang.add({
 	if (Lampa.Storage.get('language') == 'ru') {
 	   var pluginsArray = Lampa.Storage.get('plugins','[]')
 	   pluginsArray.push({"author": "@bylampa","url": "https://bylampa.github.io/tmdb-proxy.js","name":"TMDB Proxy","status": 1});
-           Lampa.Storage.set('plugins', pluginsArray);
+       Lampa.Storage.set('plugins', pluginsArray);
 	}
-           Lampa.Storage.set('set','true');
-           Lampa.Storage.set('protocol', 'http');
-           Lampa.Storage.set('keyboard_type', 'integrate');
-           Lampa.Storage.set('start_page', 'main');
-           Lampa.Storage.set('source', 'tmdb');
-           Lampa.Storage.set('background', 'false');
-	   Lampa.Storage.set('animation', 'false');
-	   Lampa.Storage.set('mask', 'false');
-	   Lampa.Storage.set('player_normalization', 'true');
-	   Lampa.Storage.set('player_timecode', 'ask');
-	   Lampa.Storage.set('screensaver', 'false');
-           Lampa.Storage.set('pages_save_total', '3');
-	   Lampa.Storage.set('device_name', 'Lampa Uncensored');
+    Lampa.Storage.set('set','true');
+    Lampa.Storage.set('protocol', 'http');
+    Lampa.Storage.set('keyboard_type', 'integrate');
+    Lampa.Storage.set('start_page', 'main');
+    Lampa.Storage.set('source', 'tmdb');
+    Lampa.Storage.set('background', 'false');
+    Lampa.Storage.set('animation', 'false');
+    Lampa.Storage.set('mask', 'false'); 
+	Lampa.Storage.set('player_normalization', 'true');
+    Lampa.Storage.set('player_timecode', 'ask');
+    Lampa.Storage.set('screensaver', 'false');
+    Lampa.Storage.set('pages_save_total', '3');
+	Lampa.Storage.set('device_name', 'Lampa Uncensored');
 	//   Lampa.Storage.set('cub_domain', 'standby.cub.red');
-	   location.reload()
-     } 
+	location.reload()
+    } 
 
      Lampa.Storage.listener.follow('change', function (event) {
       if (event.name == 'activity' && Lampa.Activity.active().component === 'bookmarks') {
@@ -127,7 +143,7 @@ $(document).ready(function() {
 
     Lampa.Storage.set('plugins',plugins) 
 
-var backImport = localStorage.getItem('plugins') || [];
+  var backImport = localStorage.getItem('plugins') || [];
   localStorage.setItem('pluginsBack', backImport);
 
 // Получаем все ключи из localStorage
