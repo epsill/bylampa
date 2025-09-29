@@ -3,7 +3,7 @@ if (Lampa.Storage.get('start_page') === 'favorite@history') {
         
     var active_timer_history = setInterval(function() {    
         console.log('2. Таймер сработал');    
-            
+        setTimeout(function(){ 
         var my_active = Lampa.Activity.active();    
         console.log('3. Текущая активность:', my_active);    
             
@@ -25,6 +25,7 @@ if (Lampa.Storage.get('start_page') === 'favorite@history') {
         } else {    
             console.log('4. Активность не history или не найдена, компонент:', my_active ? my_active.component : 'нет активности');    
         }    
+		}, 5000);
     }, 200);    
 }
 
