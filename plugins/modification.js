@@ -4,11 +4,13 @@ if (Lampa.Storage.field('start_page') === 'history') {
             
         if (my_active && my_active.component === 'history') {    
             clearInterval(active_timer_history);    
+			setTimeout(function(){
             Lampa.Activity.replace({    
                 component: 'history',  
                 title: Lampa.Lang.translate('title_history'),  
                 page: 1  
             });    
+			}, 5000);
         }    
     }, 200);    
 }
