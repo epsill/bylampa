@@ -7,7 +7,7 @@ if (Lampa.Storage.field('start_page') === 'favorite@history') {
 			setTimeout(function(){
             Lampa.Activity.replace({    
                 component: 'history',  
-                title: Lampa.Lang.translate('title_history'),  
+                title: Lampa.Lang.translate('title_bookmarks'),  
                 page: 1  
             });    
 			}, 5000);
