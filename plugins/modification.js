@@ -1,3 +1,22 @@
+if (Lampa.Storage.get('start_page') === 'favorite@history') {      
+    var active_timer_history = setInterval(function() {      
+        var my_active = Lampa.Activity.active();      
+              
+        if (my_active && my_active.component === 'favorite') {      
+            clearInterval(active_timer_history);      
+            setTimeout(function(){  
+                Lampa.Activity.replace({
+                   "url": "",
+                   "title": "История просмотров",
+                   "component": "favorite",
+                   "type": "history",
+                   "page": 1
+                })
+            }, 5000);  
+        }      
+    }, 200);      
+}
+
 Lampa.Storage.set('protocol', 'http');
 localStorage.setItem('cub_domain', 'cubfix.fun');
 
