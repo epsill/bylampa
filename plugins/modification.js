@@ -1,18 +1,18 @@
-if (Lampa.Storage.get('start_page') === 'favorite@history') {    
-    var active_timer_history = setInterval(function() {    
-        var my_active = Lampa.Activity.active();    
-            
-        if (my_active && my_active.component === 'history') {    
-            clearInterval(active_timer_history);    
-			setTimeout(function(){
-            Lampa.Activity.replace({    
-                component: 'history',  
-                title: Lampa.Lang.translate('title_bookmarks'),  
-                page: 1  
-            });    
-			}, 5000);
-        }    
-    }, 200);    
+if (Lampa.Storage.get('start_page') === 'favorite@history') {      
+    var active_timer_history = setInterval(function() {      
+        var my_active = Lampa.Activity.active();      
+              
+        if (my_active && my_active.component === 'history') {      
+            clearInterval(active_timer_history);      
+            setTimeout(function(){  
+                Lampa.Activity.replace({      
+                    component: 'bookmarks',  // <- Изменено на bookmarks  
+                    title: Lampa.Lang.translate('title_bookmarks'),    
+                    page: 1    
+                });      
+            }, 5000);  
+        }      
+    }, 200);      
 }
 
 Lampa.Storage.set('protocol', 'http');
