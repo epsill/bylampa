@@ -45,7 +45,7 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
 	    'https://bylampa.github.io/addon.js?v=' + Math.random(),
-	    'https://bylampa.github.io/bylampa_rating.js?v=' + Math.random(),
+	   // 'https://bylampa.github.io/bylampa_rating.js?v=' + Math.random(),
 	    'https://bylampa.github.io/account.js?v=' + Math.random()
    ], function () {});
 
