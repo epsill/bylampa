@@ -105,19 +105,19 @@ $(document).ready(function() {
            });
 	  }, 2000)
 	
-    var interval = setInterval(function() {
+   /* var interval = setInterval(function() {
         $('.navigation-tabs__button').each(function() {
             if ($(this).text().trim() === 'Lampa') {
                 $(this).html('BYLAMPA');
             }
         });
-    }, 100); 
+    }, 100); */
  
-    $('.navigation-tabs__button').on('focus', function() {
+   /* $('.navigation-tabs__button').on('focus', function() {
         if ($(this).text().trim() === 'Lampa') {
             $(this).html('BYLAMPA');
         }
-    });
+    });*/
 });
 
  var plugins = Lampa.Storage.get('plugins','[]')
