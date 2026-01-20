@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lampa Uncensored - Каталог фильмов и сериалов</title>
+    <title>Bylampa - Каталог фильмов и сериалов</title>
 
     <meta name="description" content="Приложение для просмотра каталога фильмов и сериалов на телевизорах, приставках и смартфонах." />
 
-    <meta property="og:title" content="Lampa Uncensored - Каталог фильмов и сериалов">
+    <meta property="og:title" content="Bylampa - Каталог фильмов и сериалов">
     <meta property="og:description" content="Приложение для просмотра каталога фильмов и сериалов на телевизорах, приставках и смартфонах.">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image" content="og.png">
@@ -27,24 +28,213 @@
     <link rel="stylesheet" href="./vender/scrollbar/jquery.scrollbar.css">
     <link rel="stylesheet" href="./vender/keypad/style.css">
 
-    <link rel="stylesheet" href="css/app.css?v=4.56">
+    <style>
+        /* ===== СТИЛИ ДЛЯ ЗАСТАВКИ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        /* Скрываем основное приложение до конца заставки */
+        #app, .welcome, .no-network {
+            display: none !important;
+        }
+        
+        /* Контейнер со звёздным небом */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* Текстовый логотип */
+        #logo {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 7s ease-out forwards;
+        }
+        
+        .logo-text {
+            font-size: 6rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-weight: normal;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-left: 0.3em; /* компенсация для letter-spacing */
+        }
+        
+        .logo-subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            letter-spacing: 0.5em;
+            margin-top: 20px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            80% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.1) translateY(-20px);
+            }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
+        /* Адаптивность для разных экранов */
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 3.5rem;
+                letter-spacing: 0.2em;
+            }
+            
+            .logo-subtitle {
+                font-size: 1rem;
+                letter-spacing: 0.3em;
+                padding: 0 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 2.5rem;
+                letter-spacing: 0.15em;
+            }
+            
+            .logo-subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+            }
+        }
+        
+        @media (min-width: 1920px) {
+            .logo-text {
+                font-size: 8rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Кнопка пропуска (для ТВ) */
+        .skip-intro {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            opacity: 0;
+            animation: showSkip 1s ease-out 2s forwards;
+            cursor: pointer;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes showSkip {
+            0% { opacity: 0; }
+            100% { opacity: 0.7; }
+        }
+        
+        .skip-intro:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Прогресс бар загрузки приложения */
+        .loading-progress {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 3;
+            border-radius: 1px;
+            overflow: hidden;
+            opacity: 0;
+            animation: showProgress 1s ease-out 5s forwards;
+        }
+        
+        .loading-progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            transition: width 0.3s ease-out;
+        }
+        
+        @keyframes showProgress {
+            0% { opacity: 0; }
+            100% { opacity: 0.6; }
+        }
+    </style>
 </head>
-<body style="background: #1d1f20;">
-    <script>
-        window.youtube_lazy_load = true
-    </script>
+<body>
+    <!-- ЗАСТАВКА В СТИЛЕ ORION -->
+    <canvas id="starfield"></canvas>
+    
+    <div id="logo">
+        <h1 class="logo-text">bylampa</h1>
+        <div class="logo-subtitle">Кино и сериалы всегда с вами</div>
+    </div>
+    
+    <!-- Прогресс загрузки -->
+    <div class="loading-progress">
+        <div class="loading-progress-bar"></div>
+    </div>
+    
+    <!-- Кнопка пропуска -->
+    <div class="skip-intro" onclick="skipIntro()">Пропустить ►</div>
 
+    <!-- ОРИГИНАЛЬНЫЕ ЭЛЕМЕНТЫ LAMPA (скрыты до конца заставки) -->
     <div class="welcome"></div>
 
-    <div id="app">
-
-    </div>
+    <div id="app"></div>
 
     <div class="no-network hide">
         <div class="no-network__title">Ошибка</div>
         <div class="no-network__desc">Не удалось загрузить файл: <span class="no-network__file"></span></div>
     </div>
     
+    <!-- СКРИПТЫ LAMPA -->
     <script src="./webos/webOSTV.js"></script>
     <script src="./vender/jquery/jquery.js"></script>
     <script src="./vender/notify/notify.js"></script>
@@ -53,6 +243,152 @@
     <script src="./vender/keypad/keypad.js"></script>
 
     <script>
+        // ===== ПЕРЕМЕННЫЕ И ФУНКЦИИ ЗАСТАВКИ =====
+        let introCompleted = false;
+        let appLoading = false;
+        
+        // Создание звёздного неба
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        
+        // Установка размеров canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initStars();
+        }
+        
+        // Создание звёзд
+        function initStars() {
+            stars = [];
+            const starCount = Math.min(300, Math.floor((canvas.width * canvas.height) / 2000));
+            
+            for (let i = 0; i < starCount; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5 + 0.5,
+                    speed: Math.random() * 0.3 + 0.1,
+                    opacity: Math.random() * 0.5 + 0.3,
+                    twinkleSpeed: Math.random() * 0.05 + 0.02
+                });
+            }
+        }
+        
+        // Отрисовка звёзд
+        function drawStars() {
+            if (!introCompleted) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Рисуем звёзды
+                stars.forEach(star => {
+                    // Мерцание
+                    star.opacity += star.twinkleSpeed;
+                    if (star.opacity > 0.8 || star.opacity < 0.3) {
+                        star.twinkleSpeed = -star.twinkleSpeed;
+                    }
+                    
+                    // Движение (параллакс-эффект)
+                    star.x -= star.speed;
+                    if (star.x < -10) {
+                        star.x = canvas.width + 10;
+                        star.y = Math.random() * canvas.height;
+                    }
+                    
+                    // Рисование звезды
+                    ctx.beginPath();
+                    ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                
+                // Небольшая туманность для глубины
+                const gradient = ctx.createRadialGradient(
+                    canvas.width / 2, canvas.height / 2, 0,
+                    canvas.width / 2, canvas.height / 2, canvas.width * 0.7
+                );
+                gradient.addColorStop(0, 'rgba(10, 10, 30, 0)');
+                gradient.addColorStop(1, 'rgba(10, 10, 30, 0.3)');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                requestAnimationFrame(drawStars);
+            }
+        }
+        
+        // Функция пропуска заставки
+        function skipIntro() {
+            if (!introCompleted) {
+                introCompleted = true;
+                startAppLoading();
+            }
+        }
+        
+        // Завершение заставки и начало загрузки приложения
+        function completeIntro() {
+            if (!introCompleted) {
+                introCompleted = true;
+                
+                // Плавное скрытие заставки
+                document.getElementById('logo').style.opacity = '0';
+                document.getElementById('logo').style.transition = 'opacity 1s ease-out';
+                document.querySelector('.skip-intro').style.opacity = '0';
+                document.querySelector('.loading-progress').style.opacity = '0';
+                
+                // Через 1 секунду начинаем загрузку приложения
+                setTimeout(startAppLoading, 1000);
+            }
+        }
+        
+        // Загрузка приложения Lampa
+        function startAppLoading() {
+            if (appLoading) return;
+            appLoading = true;
+            
+            console.log('Загрузка приложения Bylampa...');
+            
+            // Обновляем прогресс бар
+            const progressBar = document.querySelector('.loading-progress-bar');
+            let progress = 0;
+            
+            const progressInterval = setInterval(() => {
+                if (progress < 90) {
+                    progress += Math.random() * 10 + 5;
+                    if (progress > 90) progress = 90;
+                    progressBar.style.width = progress + '%';
+                }
+            }, 300);
+            
+            // Начинаем загрузку оригинального кода Lampa
+            loadLampaApp(() => {
+                clearInterval(progressInterval);
+                progressBar.style.width = '100%';
+                
+                // Через 0.5 секунды показываем приложение
+                setTimeout(showMainApp, 500);
+            });
+        }
+        
+        // Показать основное приложение
+        function showMainApp() {
+            // Скрываем заставку
+            document.getElementById('starfield').style.display = 'none';
+            document.getElementById('logo').style.display = 'none';
+            document.querySelector('.skip-intro').style.display = 'none';
+            document.querySelector('.loading-progress').style.display = 'none';
+            
+            // Показываем основное приложение Lampa
+            document.getElementById('app').style.display = 'block';
+            document.querySelector('.welcome').style.display = 'block';
+            
+            // Восстанавливаем фон тела
+            document.body.style.background = '#1d1f20';
+            document.body.style.display = 'block';
+        }
+        
+        // ===== ОРИГИНАЛЬНЫЙ КОД ЗАГРУЗКИ LAMPA (адаптированный) =====
         var lampa_url     = '';
         var cache_version = Math.floor((new Date()).getTime() / 9e5); // Новое значение каждые 15 минут
             
@@ -92,7 +428,7 @@
                             onerror()
                         } else{
                             $('.no-network').removeClass('hide')
-
+                            $('.no-network').style.display = 'block';
                             $('.no-network__file').text(window.location.href + '/' + src)
                         }
                     }
@@ -108,60 +444,97 @@
             add(scripts)
         }
 
-        function loadCurrentLampa() {
-            putScript('app.min.js?v=' + cache_version, function () {})
+        function loadCurrentLampa(callback) {
+            putScript('app.min.js?v=' + cache_version, function () {
+                if (callback) callback();
+            })
         }
 
-        function loadLocalLampa(){
+        function loadLocalLampa(callback){
             if(lampa_url !== '') window.local_lampa = true
 
-            loadCurrentLampa()
+            loadCurrentLampa(callback)
         }
 
-        if (typeof AndroidJS !== "undefined"
-            && !!AndroidJS.getLampaURL
-            && /^https?:\/\//i.test(AndroidJS.getLampaURL())
-            && !/^https?:\/\//i.test(location.href)
-        ) {
-            lampa_url = urlJoin(AndroidJS.getLampaURL(),'')
+        function loadLampaApp(callback) {
+            if (typeof AndroidJS !== "undefined"
+                && !!AndroidJS.getLampaURL
+                && /^https?:\/\//i.test(AndroidJS.getLampaURL())
+                && !/^https?:\/\//i.test(location.href)
+            ) {
+                lampa_url = urlJoin(AndroidJS.getLampaURL(),'')
+            }
+
+            if (lampa_url !== '') {
+                putScript(
+                    urlJoin(lampa_url, 'lampainit.js?v=' + cache_version),
+                    false,
+                    function(){}
+                )
+
+                putScript(
+                    urlJoin(lampa_url, 'app.min.js?v=' + cache_version),
+                    function () {
+                        var css = urlJoin(lampa_url, 'css/app.css?v=' + cache_version)
+
+                        $('head').append('<link rel="stylesheet" href="' + css + '">')
+                        
+                        if (callback) callback();
+                    },
+                    function () {
+                        putScript(
+                            urlJoin(lampa_url, 'lampa-main/app.min.js?v=' + cache_version),
+                            function () {
+                                var css = urlJoin(lampa_url, 'lampa-main/css/app.css?v=' + cache_version)
+
+                                $('head').append('<link rel="stylesheet" href="' + css + '">')
+
+                                putScript(
+                                    urlJoin(lampa_url, 'lampainit.js?v=' + cache_version),
+                                    false,
+                                    function(){}
+                                )
+                                
+                                if (callback) callback();
+                            },
+                            function() {
+                                loadLocalLampa(callback);
+                            }
+                        )
+                    }
+                )
+            }
+            else{
+                loadCurrentLampa(callback);
+            }
         }
 
-        if (lampa_url !== '') {
-            putScript(
-                urlJoin(lampa_url, 'lampainit.js?v=' + cache_version),
-                false,
-                function(){}
-            )
-
-            putScript(
-                urlJoin(lampa_url, 'app.min.js?v=' + cache_version),
-                function () {
-                    var css = urlJoin(lampa_url, 'css/app.css?v=' + cache_version)
-
-                    $('head').append('<link rel="stylesheet" href="' + css + '">')
-                },
-                function () {
-                    putScript(
-                        urlJoin(lampa_url, 'lampa-main/app.min.js?v=' + cache_version),
-                        function () {
-                            var css = urlJoin(lampa_url, 'lampa-main/css/app.css?v=' + cache_version)
-
-                            $('head').append('<link rel="stylesheet" href="' + css + '">')
-
-                            putScript(
-                                urlJoin(lampa_url, 'lampainit.js?v=' + cache_version),
-                                false,
-                                function(){}
-                            )
-                        },
-                        loadLocalLampa
-                    )
+        // ===== ИНИЦИАЛИЗАЦИЯ =====
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Запуск заставки
+        resizeCanvas();
+        drawStars();
+        
+        // Автоматическое завершение заставки через 7 секунд
+        setTimeout(completeIntro, 7000);
+        
+        // Обработка клавиш для пропуска (Enter, Space, Esc)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
+                skipIntro();
+            }
+        });
+        
+        // Для ТВ: нажатие на кнопку OK также пропускает
+        if (typeof webOS !== 'undefined') {
+            document.addEventListener('keydown', (e) => {
+                if (e.keyCode === 13) { // OK button on webOS
+                    skipIntro();
                 }
-            )
+            });
         }
-        else{
-            loadCurrentLampa()
-        }
+        
     </script>
 </body>
 </html>
