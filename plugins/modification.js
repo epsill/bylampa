@@ -125,6 +125,7 @@ $(document).ready(function() {
     plugins.forEach(function(plug) {
         plug.url = (plug.url + '').replace('http://cub.red/plugin/tmdb-proxy', 'https://bylampa.github.io/tmdb-proxy.js');
         plug.url = (plug.url + '').replace('https://nb557.github.io/plugins/rating.js', 'https://bylampa.github.io/rating.js');
+		plug.url = (plug.url + '').replace('https://nb557.github.io/plugins/online_mod.js', 'https://bylampa.github.io/online_mod.js');
     })
 
     Lampa.Storage.set('plugins',plugins) 
