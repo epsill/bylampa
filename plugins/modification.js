@@ -69,7 +69,7 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
        Lampa.Storage.set('plugins', pluginsArray);
 	}
     Lampa.Storage.set('set','true');
-    Lampa.Storage.set('protocol', 'https');
+    Lampa.Storage.set('protocol', 'http');
     Lampa.Storage.set('keyboard_type', 'integrate');
     Lampa.Storage.set('start_page', 'main');
     Lampa.Storage.set('source', 'tmdb');
