@@ -26,26 +26,6 @@
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./vender/scrollbar/jquery.scrollbar.css">
     <link rel="stylesheet" href="./vender/keypad/style.css">
-    <script>
-  // Переопределить XMLHttpRequest и fetch
-  const originalOpen = XMLHttpRequest.prototype.open;
-  XMLHttpRequest.prototype.open = function(method, url, ...args) {
-    if (url.startsWith('http://i91227gp.beget.tech')) {
-      url = url.replace('http://', 'https://');
-    }
-    return originalOpen.call(this, method, url, ...args);
-  };
-  
-  // То же для fetch
-  const originalFetch = window.fetch;
-  window.fetch = function(input, ...args) {
-    if (typeof input === 'string' && input.startsWith('http://i91227gp.beget.tech')) {
-      input = input.replace('http://', 'https://');
-    }
-    return originalFetch.call(this, input, ...args);
-  };
-</script>
-
     
 </head>
 <body style="background: #1d1f20;">
