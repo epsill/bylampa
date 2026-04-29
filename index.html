@@ -120,8 +120,8 @@
 
         if (typeof AndroidJS !== "undefined"
             && !!AndroidJS.getLampaURL
-            && /^https?:\/\//i.test(AndroidJS.getLampaURL())
-            && !/^https?:\/\//i.test(location.href)
+            && /^http?:\/\//i.test(AndroidJS.getLampaURL())
+            && !/^http?:\/\//i.test(location.href)
         ) {
             lampa_url = urlJoin(AndroidJS.getLampaURL(),'')
         }
