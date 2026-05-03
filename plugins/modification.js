@@ -71,6 +71,7 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
     Lampa.Storage.set('set','true');
     Lampa.Storage.set('protocol', 'http');
     Lampa.Storage.set('keyboard_type', 'integrate');
+    Lampa.Storage.set('system_keyboard', false);
     Lampa.Storage.set('start_page', 'main');
     Lampa.Storage.set('source', 'tmdb');
     Lampa.Storage.set('background', 'false');
