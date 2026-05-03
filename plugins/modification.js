@@ -71,12 +71,12 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
         }
     },200);
 
-    function start_set(){
-	if (Lampa.Storage.get('language') == 'ru') {
-	   var pluginsArray = Lampa.Storage.get('plugins','[]')
-	   pluginsArray.push({"author": "@bylampa","url": "https://bylampa.github.io/tmdb-proxy.js","name":"TMDB Proxy","status": 1});
+   function start_set(){
+    if (Lampa.Storage.get('language') == 'ru') {
+       var pluginsArray = Lampa.Storage.get('plugins','[]')
+       pluginsArray.push({"author": "@bylampa","url": "https://bylampa.github.io/tmdb-proxy.js","name":"TMDB Proxy","status": 1});
        Lampa.Storage.set('plugins', pluginsArray);
-	}
+    }
     Lampa.Storage.set('set','true');
     Lampa.Storage.set('protocol', 'http');
     Lampa.Storage.set('keyboard_type', 'integrate');
@@ -86,11 +86,11 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
     Lampa.Storage.set('background', 'false');
     Lampa.Storage.set('animation', 'false');
     Lampa.Storage.set('mask', 'false'); 
-	Lampa.Storage.set('player_normalization', 'true');
+    Lampa.Storage.set('player_normalization', 'true');
     Lampa.Storage.set('player_timecode', 'ask');
     Lampa.Storage.set('screensaver', 'false');
     Lampa.Storage.set('pages_save_total', '3');
-	Lampa.Storage.set('device_name', 'Lampa Uncensored');
+    Lampa.Storage.set('device_name', 'Lampa Uncensored');
 	//   Lampa.Storage.set('cub_domain', 'standby.cub.red');
 	
 	// Сохраняем в localStorage чтобы после перезагрузки принудительно включить встроенную клавиатуру
