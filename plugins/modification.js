@@ -42,6 +42,15 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
    window.lampa_settings.demo = false;
    window.lampa_settings.read_only = false;
 
+   // Принудительно включаем встроенную клавиатуру после первого запуска
+   if (localStorage.getItem('force_keyboard') === 'integrate') {
+       setTimeout(function() {
+           Lampa.Storage.set('keyboard_type', 'integrate');
+           Lampa.Storage.set('system_keyboard', false);
+           localStorage.removeItem('force_keyboard');
+       }, 1000);
+   }
+
    Lampa.Utils.putScriptAsync([
 	    'https://bylampa.github.io/notice.js?v=' + Math.random(),
 	    'https://bylampa.github.io/addon.js?v=' + Math.random(),
@@ -83,6 +92,10 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
     Lampa.Storage.set('pages_save_total', '3');
 	Lampa.Storage.set('device_name', 'Lampa Uncensored');
 	//   Lampa.Storage.set('cub_domain', 'standby.cub.red');
+	
+	// Сохраняем в localStorage чтобы после перезагрузки принудительно включить встроенную клавиатуру
+	localStorage.setItem('force_keyboard', 'integrate');
+	
 	location.reload()
     } 
 
@@ -144,5 +157,3 @@ $(document).ready(function() {
         i--;
     }
 }*/
-
-
