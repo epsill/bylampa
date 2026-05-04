@@ -70,13 +70,14 @@ localStorage.setItem('cub_domain', 'cubfix.fun');
 	}
     Lampa.Storage.set('set','true');
     Lampa.Storage.set('protocol', 'http');
-    Lampa.Storage.set('keyboard_type', 'default');
+    Lampa.Storage.set('keyboard_type', 'integrate');
+    Lampa.Storage.set('system_keyboard', false);
     Lampa.Storage.set('start_page', 'main');
     Lampa.Storage.set('source', 'tmdb');
     Lampa.Storage.set('background', 'false');
-    Lampa.Storage.set('animation', 'false');
+    Lampa.Storage.set('animation', 'true');
     Lampa.Storage.set('mask', 'false'); 
-	Lampa.Storage.set('player_normalization', 'true');
+	Lampa.Storage.set('player_normalization', 'false');
     Lampa.Storage.set('player_timecode', 'ask');
     Lampa.Storage.set('screensaver', 'false');
     Lampa.Storage.set('pages_save_total', '3');
