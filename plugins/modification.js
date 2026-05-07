@@ -1,5 +1,5 @@
 Lampa.Storage.set('protocol', 'http');
-localStorage.setItem('cub_domain', 'cubfix.fun');
+localStorage.setItem('cub_domain', 'cub.rip');
 
 /*Lampa.SettingsApi.addParam({
     component: 'interface',
